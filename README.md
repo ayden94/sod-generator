@@ -19,8 +19,10 @@ time input의 시간 단위를 버튼으로 선택할 수 있습니다.
 
 <img width="793" alt="스크린샷 2025-02-03 오전 1 47 02" src="https://github.com/user-attachments/assets/dcbfcb89-d8e6-4012-af15-d4586d460460" />
 
+&nbsp;
 
 정오가 지나면 EOD를 입력할 수 있게 바뀝니다.
 
+&nbsp;
 
 <img width="791" alt="스크린샷 2025-02-03 오전 1 51 30" src="https://github.com/user-attachments/assets/8fb1941c-61cb-4e43-b9f9-81dbf9ead71d" />
