@@ -9,9 +9,10 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "caro-kann": "^3.0.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "utilinent": "^0.0.7"

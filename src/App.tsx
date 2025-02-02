@@ -3,18 +3,24 @@ import { For, Show } from "utilinent"
 import { getCurrentDateAndDay } from "./util/getCurrentDateAndDay";
 import { handleGroupBy } from "./util/formatGroupBy";
 import { isAfternoon } from "./util/isAfternoon";
+import { create } from "caro-kann";
+import { persist } from "caro-kann/middleware";
 
 export type RowItem = {id: number, startAt: string, endAt: string, content: string}
+
+const initValue = [
+  { id: Math.random(), startAt: "08:00", endAt: "08:00", content: "" },
+  { id: Math.random(), startAt: "08:00", endAt: "08:00", content: "" },
+  { id: Math.random(), startAt: "08:00", endAt: "08:00", content: "" },
+]
+
+const useRow = create<Array<RowItem>>(persist(initValue, { local: "row" }));
 
 export default function App() {
   const STEP_OPTIONS = [1, 15, 30, 60];
   const [sod, setSod] = useState("");
   const [step, setStep] = useState(1800);
-  const [row, setRow] = useState<Array<RowItem>>([
-    { id: Math.random(), startAt: "08:00", endAt: "08:00", content: "" },
-    { id: Math.random(), startAt: "08:00", endAt: "08:00", content: "" },
-    { id: Math.random(), startAt: "08:00", endAt: "08:00", content: "" },
-  ])
+  const [row, setRow] = useRow();
 
   const handleStepChange = (value: number) => () => setStep(value);
   const handleRowAdd = () => setRow([...row, { id: Math.random(), startAt: "08:00", endAt: "08:00", content: "" }]);
@@ -24,11 +30,13 @@ export default function App() {
 
   return (
     <>
+      <h1>오늘의 <Show when={isAfternoon()} fallback="SOD">EOD</Show>를 만들어보세요</h1>
+
       <div>
         <span>시간 단위 : </span>
         <For each={STEP_OPTIONS}>
-          {step => (
-            <button type="button" key={step} onClick={handleStepChange(60 * step)}>{step}분</button>
+          {stepI => (
+            <button type="button" style={{ backgroundColor: step === 60 * stepI ? "rgba(0,0,220,0.5)" : "" }} key={stepI} onClick={handleStepChange(60 * stepI)}>{stepI}분</button>
           )}
         </For>
       </div>
@@ -64,7 +72,7 @@ export default function App() {
       <br/>
       <br/>
       <br/>
-      <button type="button" onClick={handleGroupBy(row, setSod)}>변환하기</button>
+      <button type="button" onClick={handleGroupBy(row, setSod)}>변환하기</button> <button onClick={() => setRow(initValue)}>페이지 초기화</button>
       <br/>
       <br/>
       <br/>
