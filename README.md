@@ -1,6 +1,11 @@
 ## SOD Generator 
 
-개발자가 게으르면 코드를 짭니다. 
+개발자가 게으르면 코드를 짭니다. 아래의 명령어를 입력하면 http://localhost:5173/ 주소에 변환기 페이지가 열립니다.
+
+```bash
+npm i
+npm run dev
+```
 
 <img width="797" alt="스크린샷 2025-02-03 오전 1 42 58" src="https://github.com/user-attachments/assets/d4ab1a5c-5cd0-4549-8094-d82f6aef55d0" />
 
