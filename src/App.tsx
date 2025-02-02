@@ -42,13 +42,14 @@ export default function App() {
               <button type="button" style={{width: "50px"}} onClick={handleRowDelete(id)}>삭제</button>
               <input 
                 type="time"
-                style={{width: "120px"}}
                 step={step}
+                style={{width: "120px"}}
                 value={startAt} 
                 onChange={handleInputChange("startAt", id)}
               />
               <input
-                type="time" 
+                type="time"
+                step={step}
                 style={{width: "120px"}}
                 value={endAt}
                 onChange={handleInputChange("endAt", id)}
