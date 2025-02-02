@@ -18,3 +18,9 @@ time input의 시간 단위를 버튼으로 선택할 수 있습니다.
 변환하기 버튼을 누르면 작성한 내용을 텍스트로 변환해줍니다. 변환 과정에서 시작 시간을 기준으로 오름차순 정렬됩니다. 아래의 예시는 영주님 SOD를 참고했습니다 :)
 
 <img width="793" alt="스크린샷 2025-02-03 오전 1 47 02" src="https://github.com/user-attachments/assets/dcbfcb89-d8e6-4012-af15-d4586d460460" />
+
+
+정오가 지나면 EOD를 입력할 수 있게 바뀝니다.
+
+
+<img width="791" alt="스크린샷 2025-02-03 오전 1 51 30" src="https://github.com/user-attachments/assets/8fb1941c-61cb-4e43-b9f9-81dbf9ead71d" />
